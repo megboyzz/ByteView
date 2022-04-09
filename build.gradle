@@ -13,8 +13,13 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     implementation 'commons-codec:commons-codec:1.15'
+    implementation 'io.kaitai:kaitai-struct-runtime:0.9'
 }
 
 test {
     useJUnitPlatform()
+}
+
+task d(){
+    print("lol")
 }

@@ -1,4 +1,3 @@
-@Deprecated
 public class DHeaders {
 
     //шаболоны заголовков файла .sb/.sba/.bin
