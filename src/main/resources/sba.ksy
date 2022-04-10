@@ -7,7 +7,7 @@ meta:
 seq:
  - id: magic
    contents: ["SBIN", 3, 0, 0, 0]
- - id: enum
+ - id: a_enum
    type: header
  - id: stru
    type: header

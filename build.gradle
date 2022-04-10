@@ -20,6 +20,24 @@ test {
     useJUnitPlatform()
 }
 
-task d(){
-    print("lol")
+/*
+    В папке resources будут лежать ksy файлы
+ */
+task kaitaiCompile(){
+    def s = "$sourceSets.main.resources.srcDirs"
+
+    def resources = file(s.substring(1, s.length() - 1))
+    file("$buildDir" + "\\generated\\parsers").mkdirs()
+    for(file in resources.listFiles()){
+        exec {
+            workingDir "$buildDir"
+            executable 'cmd.exe'
+            args "/c", "kaitai-struct-compiler", file.getAbsolutePath(), "-t", "java", "-d", "$buildDir" + "\\generated\\parsers"
+            ignoreExitValue true
+        }
+    }
+
 }
+
+sourceSets["main"].java.srcDir(file("$buildDir" + "\\generated\\parsers"))
+

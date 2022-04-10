@@ -16,7 +16,6 @@ public class Main {
 
     public static void main(String args[]) {
 
-
         ActionListener listener = e ->{
             File selectedFile = ((JFileChooser) e.getSource()).getSelectedFile();
             String leftAlignFormat = "| %-84s | %-23s |%n";
@@ -140,8 +139,7 @@ public class Main {
             System.out.println(s);
         }
         System.out.println(count);
-
-
+        Sba a;
     }
 
 }
